@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mvoe AI — Recording what patients actually ask for</title>
-<meta name="description" content="Mvoe AI is building a WhatsApp service that locates blood and medicine in Cameroon — and, in answering, records the first structured account of health demand in Central Africa. Phase 1 MVP ships Q4 2026 in Yaoundé.">
+<meta name="description" content="Mvoe AI is building a WhatsApp service that locates blood and medicine in Cameroon — and, in answering, records the request itself. Phase 1 MVP ships Q4 2026 in Yaoundé.">
 <link rel="canonical" href="https://mvoe-ai.pages.dev/">
 <meta name="theme-color" content="#0d8a9c">
 <meta property="og:title" content="Mvoe AI — Recording what patients actually ask for">
-<meta property="og:description" content="A WhatsApp service that locates blood and medicine in Cameroon — and records the first structured account of health demand in Central Africa. Phase 1 MVP ships Q4 2026 in Yaoundé.">
+<meta property="og:description" content="A WhatsApp service that locates blood and medicine in Cameroon — and records the request itself. Phase 1 MVP ships Q4 2026 in Yaoundé.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mvoe-ai.pages.dev/">
 <meta property="og:image" content="https://mvoe-ai.pages.dev/og-image.png">
@@ -20,7 +20,7 @@
 <meta property="og:locale:alternate" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mvoe AI — Recording what patients actually ask for">
-<meta name="twitter:description" content="A WhatsApp service that locates blood and medicine in Cameroon — and records the first structured account of health demand in Central Africa.">
+<meta name="twitter:description" content="A WhatsApp service that locates blood and medicine in Cameroon — and records the request itself.">
 <meta name="twitter:image" content="https://mvoe-ai.pages.dev/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23073d46'/%3E%3Cpath d='M16 6.5c4.4 5 6.8 8.3 6.8 11.4a6.8 6.8 0 0 1-13.6 0C9.2 14.8 11.6 11.5 16 6.5z' fill='%230d8a9c'/%3E%3C/svg%3E">
 <style>
@@ -96,10 +96,6 @@
   .tag{display:inline-block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:999px}
   .tag-live{background:var(--brand);color:#fff}
   .tag-next{background:var(--brand-tint);color:var(--brand)}
-  .track ul{list-style:none;margin-top:14px}
-  .track li{padding:7px 0;font-size:.92rem;border-top:1px solid rgba(255,255,255,.15)}
-  .track-meds li{border-top:1px solid var(--line)}
-  .track li::before{content:"— ";opacity:.6}
   /* Steps */
   .step-num{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:.9rem;margin-bottom:10px}
   /* Video */
@@ -121,7 +117,6 @@
   .arch-figure{margin:0}
   .arch-media{display:block;position:relative;border-radius:14px;overflow:hidden;border:1px solid #1e3138;background:#0d1a1f;line-height:0}
   .arch-media video,.arch-media img{display:block;width:100%;height:auto}
-  .arch-still{display:none}
   .arch-cap{margin-top:12px;font-size:.82rem;color:#8aa3a9;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;line-height:1.5}
   .arch-cap a{color:#4fc3d4}
   .arch-text{display:none}
@@ -139,30 +134,14 @@
     .arch-figure{display:none}
     .arch-text{display:block}
   }
-  @media(prefers-reduced-motion:reduce){
-    .arch-media video{display:none}
-    .arch-still{display:block}
-  }
   /* Contact */
   .contact-box{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--brand-dark),var(--brand-deep));color:#fff;border-radius:18px;padding:52px 32px;text-align:center}
   .contact-inner{position:relative;z-index:1}
   .contact-quote{font-family:Georgia,'Times New Roman',serif;font-style:italic;color:#cfe6ea;font-size:1rem;margin-top:26px}
   .contact-box h2{color:#fff;margin:0 auto 10px}
   .contact-box p{color:#cfe6ea;max-width:560px;margin:0 auto 26px;font-size:.98rem}
-  .mail-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:22px}
   .btn-light{background:#fff;color:var(--brand-dark)}
   .btn-light:hover{background:var(--brand-tint)}
-  .btn-outline{border:1.5px solid rgba(255,255,255,.5);color:#fff;background:transparent}
-  .btn-outline:hover{background:rgba(255,255,255,.12)}
-  .addr-block{max-width:520px;margin:0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 18px}
-  .addr-label{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9fc9d1;margin-bottom:8px}
-  .addr{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-  #addr-text{font-size:1.02rem;font-weight:700;color:#fff;user-select:all;word-break:break-all}
-  .copy-btn{border:1px solid rgba(255,255,255,.45);background:transparent;color:#fff;border-radius:7px;padding:5px 12px;font-size:.8rem;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
-  .copy-btn:hover{background:rgba(255,255,255,.15)}
-  .open-in{margin-top:12px;font-size:.85rem;color:#9fc9d1}
-  .open-in a{color:#fff;text-decoration:underline;text-underline-offset:3px}
-  .open-in a:hover{color:var(--brand-tint)}
   footer{padding:30px 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.83rem}
   .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </style>
@@ -192,8 +171,8 @@
       <span class="en">Every request for care is a fact. In Cameroon, almost none of them are <em>recorded</em>.</span>
     </h1>
     <p class="lead">
-      <span class="fr">Mvoe AI construit un service WhatsApp qui répond à une question bien réelle — où trouver cette poche de sang, ce médicament, maintenant. En y répondant, il constituera le premier relevé structuré de la demande de santé en Afrique centrale. Le service doit être réellement utile, sinon il n'y a pas de données. Le sang est notre point de départ.</span>
-      <span class="en">Mvoe AI is building a WhatsApp service that answers a real question — where can I find this blood unit, this medicine, right now. In answering it, the service will record the first structured account of health demand in Central Africa. The service has to be genuinely useful, or there is no dataset. Blood is where we start.</span>
+      <span class="fr">Mvoe AI construit un service qui répond à des questions bien réelles — où trouver cette poche de sang, ce médicament, maintenant. En y répondant, il enregistrera la demande elle-même : la molécule, le lieu, le moment. Le service doit être réellement utile, sinon il n'y a pas de données. Le sang est notre point de départ.</span>
+      <span class="en">Mvoe AI is building a service that answers real-life questions — where can I find this blood unit, this medicine, right now. In answering them, the service will record the request itself: the molecule, the place, the moment. The service has to be genuinely useful, or there is no dataset. Blood is where we start.</span>
     </p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact"><span class="fr">Devenir partenaire</span><span class="en">Become a partner</span></a>
@@ -203,7 +182,6 @@
       <div class="stat"><b>0</b><small><span class="fr">relevé structuré de la demande de santé en Afrique centrale à ce jour</span><span class="en">structured records of health demand in Central Africa today</span></small></div>
       <div class="stat"><b>400 000</b><small><span class="fr">poches de sang nécessaires chaque année au Cameroun</span><span class="en">blood units needed each year in Cameroon</span></small></div>
       <div class="stat"><b>&lt; 30 s</b><small><span class="fr">temps de réponse visé — spécification Phase 1a</span><span class="en">target response time — Phase 1a design spec</span></small></div>
-      <div class="stat"><b>2×/jour</b><small><span class="fr">cycle de déclaration prévu — 08:00 et 16:00</span><span class="en">planned reporting cycle — 08:00 and 16:00</span></small></div>
     </div>
   </div>
 </section>
@@ -286,7 +264,7 @@
            youtube-nocookie.com sets no tracking cookie until the viewer presses
            play, which keeps this page consent-free under Law No. 2024/017.
          <div class="video-frame">
-           <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0"
+           <iframe src="https://www.youtube-nocookie.com/embed/adO-3hFE6F0?rel=0"
                    title="Mvoe AI — company film"
                    loading="lazy" allowfullscreen
                    allow="accelerometer; encrypted-media; picture-in-picture"></iframe>
@@ -308,14 +286,13 @@
            </video>
          </div>
          ========================================================================== -->
+   <div class="video-frame">
+           <iframe src="https://www.youtube-nocookie.com/embed/adO-3hFE6F0?rel=0"
+                   title="Mvoe AI — company film"
+                   loading="lazy" allowfullscreen
+                   allow="accelerometer; encrypted-media; picture-in-picture"></iframe>
+         </div>
 
-    <div class="video-ph">
-      <div class="video-ph-inner">
-        <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-        <b><span class="fr">Film de présentation à venir</span><span class="en">Company film coming soon</span></b>
-        <small><span class="fr">La démonstration du parcours WhatsApp sera publiée ici.</span><span class="en">The WhatsApp walkthrough will be published here.</span></small>
-      </div>
-    </div>
     <p class="video-note">
       <span class="fr">Format court, sous-titres français inclus.</span>
       <span class="en">Short form, subtitles included.</span>
@@ -355,7 +332,7 @@
     </div>
     <div class="card" style="margin-top:20px">
       <h3><span class="fr">Les limites que nous nous imposons</span><span class="en">The limits we set ourselves</span></h3>
-      <p><span class="fr">Aucune donnée n'a encore été collectée : le jeu de données décrit ici n'existe pas à ce jour, il est le résultat attendu de la Phase 1 et des suivantes. Lorsqu'il existera : segments agrégés, dé-identifiés et sur consentement ; publicité grand public limitée aux produits sans ordonnance et à l'assurance ; intelligence sur les médicaments de prescription vendue uniquement en B2B à des professionnels et institutions ; aucun profil de santé individuel n'est vendu, jamais.</span><span class="en">No data has been collected yet: the dataset described here does not exist today — it is the intended outcome of Phase 1 and what follows. When it does exist: aggregated, de-identified, opt-in segments; consumer advertising limited to over-the-counter products and insurance; prescription-medicine intelligence sold B2B only, to professionals and institutions; individual health profiles are never sold, at any price.</span></p>
+      <p><span class="fr">Agrégé, dé-identifié, et conservé au Cameroun. Aucun profil de santé individuel n'est vendu, jamais.</span><span class="en">Aggregated, de-identified, and kept in Cameroon. Individual health profiles are never sold, at any price.</span></p>
     </div>
   </div>
 </section>
@@ -373,26 +350,16 @@
         <span class="tag tag-live"><span class="fr">MVP · T4 2026</span><span class="en">MVP · Q4 2026</span></span>
         <h3><span class="fr">🩸 Sang</span><span class="en">🩸 Blood</span></h3>
         <p><span class="fr">Le produit que nous construisons : la disponibilité des poches de sang, en temps réel, dans les banques de sang partenaires de Yaoundé. Conçu comme une couche complémentaire de la consolidation nationale des stocks, jamais comme un substitut.</span><span class="en">The product we are building: real-time blood-unit availability across partner blood banks in Yaoundé. Designed as a complementary layer on top of national stock consolidation by the NBTS (National Blood Transfusion Service; CNTS in French), never as a substitute for it.</span></p>
-        <ul>
-          <li><span class="fr">Urgences transfusionnelles et recherches planifiées</span><span class="en">Transfusion emergencies and planned searches</span></li>
-          <li><span class="fr">Déclaration de stock sans nouveau logiciel côté banques</span><span class="en">Stock declaration with no new software for blood banks</span></li>
-          <li><span class="fr">Yaoundé, puis Douala</span><span class="en">Yaoundé, then Douala</span></li>
-        </ul>
       </div>
       <div class="track track-meds">
         <span class="tag tag-next"><span class="fr">Prochaine étape · 2027</span><span class="en">Next step · 2027</span></span>
         <h3><span class="fr">💊 Médicaments</span><span class="en">💊 Medicines</span></h3>
         <p><span class="fr">Une fois le socle validé sur le sang : recherche de médicaments dans les pharmacies agréées partenaires, avec lecture d'ordonnance par photo — pour réorienter la demande vers des circuits de qualité contrôlée.</span><span class="en">Once the backbone is proven on blood: medicine search across licensed partner pharmacies, with prescription-photo reading — redirecting demand towards quality-assured channels.</span></p>
-        <ul>
-          <li><span class="fr">Plus de 500 pharmacies agréées, dont environ trois sur quatre à Douala et Yaoundé — notre réseau cible</span><span class="en">More than 500 licensed pharmacies, about three in four of them in Douala and Yaoundé — our target network</span></li>
-          <li><span class="fr">Ordonnance en photo, réponse localisée</span><span class="en">Prescription photo in, located answer out</span></li>
-          <li><span class="fr">Puis application, paiement mobile et réservation</span><span class="en">Then app, mobile payment and reservation</span></li>
-        </ul>
       </div>
     </div>
     <div class="card" style="margin-top:18px">
       <h3><span class="fr">Protection des données, dès la conception</span><span class="en">Data protection, by design</span></h3>
-      <p><span class="fr">Conçu pour la loi n° 2024/017 sur la protection des données personnelles. Les identifiants directs sont pseudonymisés dès la réception, la clé de ré-identification restant au Cameroun ; le système de référence sera hébergé au Cameroun avec le MVP de la Phase 1 (règle de conception, mise en œuvre au T4 2026). Revue éthique par notre conseil scientifique. Aucune collecte de données n'a commencé à ce jour.</span><span class="en">Built for Law No. 2024/017 on personal data protection. Direct identifiers are pseudonymised on receipt, with the re-identification key held in Cameroon; the system of record will be hosted in Cameroon with the Phase 1 MVP (design rule, implemented Q4 2026). Ethics review by our scientific advisory board. No data collection has begun to date.</span></p>
+      <p><span class="fr">Conçu pour la loi n° 2024/017 sur la protection des données personnelles. Les identifiants directs sont pseudonymisés dès la réception, la clé de ré-identification restant au Cameroun.</span><span class="en">Built for Law No. 2024/017 on personal data protection. Direct identifiers are pseudonymised on receipt, with the re-identification key held in Cameroon.</span></p>
     </div>
   </div>
 </section>
@@ -409,15 +376,12 @@
     <figure class="arch-figure">
       <div class="arch-media">
         <video id="archVideo" muted playsinline preload="none" poster="architecture-card.png"
-               aria-label="Mvoe AI Phase 1a architecture, animated">
+               aria-label="Mvoe AI Phase 1a architecture: a patient message enters via the WhatsApp Business API into n8n, passes a Gemma redaction gate inside the Cameroon data-residency boundary, and only then reaches Gemini for intent extraction; blood banks and pharmacies report supply over the same WhatsApp, producing a de-identified demand dataset.">
           <source src="architecture-card.mp4" type="video/mp4">
         </video>
-        <img class="arch-still" src="architecture-card.png" width="1600" height="900"
-             alt="Mvoe AI Phase 1a architecture: a patient message enters via the WhatsApp Business API into n8n, passes a Gemma redaction gate inside the Cameroon data-residency boundary, and only then reaches Gemini for intent extraction; blood banks and pharmacies report supply over the same WhatsApp, producing a de-identified demand dataset.">
       </div>
       <figcaption class="arch-cap">
         <span><span class="fr">Phase 1a — spécification de conception, livrée au T4 2026.</span><span class="en">Phase 1a — build specification, delivered Q4 2026.</span></span>
-        <a href="architecture-card-full.png" target="_blank" rel="noopener"><span class="fr">Voir en grand ↗</span><span class="en">Open full size ↗</span></a>
       </figcaption>
     </figure>
 
@@ -469,25 +433,11 @@
         <h2><span class="fr">Construisons ensemble l'accès au sang et aux soins</span><span class="en">Let's build access to blood and care, together</span></h2>
         <p><span class="fr">Banque de sang, hôpital, pharmacie, institution ou investisseur : parlons-en. Lancement de la Phase 1 à Yaoundé au 4<sup>e</sup> trimestre 2026.</span><span class="en">Blood bank, hospital, pharmacy, institution or investor: let's talk. Phase 1 launches in Yaoundé in Q4 2026.</span></p>
 
-        <div class="mail-row">
-          <button class="btn btn-light" type="button" data-subject="partner"><span class="fr">Devenir partenaire</span><span class="en">Become a partner</span></button>
-          <button class="btn btn-outline" type="button" data-subject="institution"><span class="fr">Demande institutionnelle</span><span class="en">Institutional enquiry</span></button>
-          <button class="btn btn-outline" type="button" data-subject="investor"><span class="fr">Demande investisseur</span><span class="en">Investor enquiry</span></button>
-        </div>
-
-        <div class="addr-block">
-          <div class="addr-label"><span class="fr">Notre adresse</span><span class="en">Our address</span></div>
-          <div class="addr">
-            <span id="addr-text">healthconnect62<!-- -->&#64;<!-- -->gmail.com</span>
-            <button class="copy-btn" type="button" id="copyBtn"><span class="fr">Copier</span><span class="en">Copy</span></button>
-          </div>
-          <div class="open-in">
-            <span class="fr">Ouvrir dans :</span><span class="en">Open in:</span>
-            <a href="#" data-mail="gmail">Gmail</a> ·
-            <a href="#" data-mail="outlook">Outlook</a> ·
-            <a href="#" data-mail="default"><span class="fr">application mail</span><span class="en">mail app</span></a>
-          </div>
-        </div>
+        <a class="btn btn-light"
+           href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=healthconnect62@gmail.com&amp;su=Mvoe%20AI"
+           target="_blank" rel="noopener">
+          <span class="fr">Nous écrire par Gmail</span><span class="en">Write to us on Gmail</span>
+        </a>
 
         <p class="contact-quote"><span class="fr">« Une goutte de l'un peut être toute la vie de l'autre. »</span><span class="en">“A drop from one can be the whole life of another.”</span></p>
       </div>
@@ -515,73 +465,6 @@ function toggleLang(){
     document.documentElement.lang='fr';
   }
 }
-
-/* ---------- contact ----------
-   The address is assembled at runtime so it is not sitting in the source as a
-   single harvestable string. The markup already carries a readable fallback
-   for anyone with JavaScript disabled. */
-(function(){
-  var USER='healthconnect62', DOMAIN='gmail.com';
-  var ADDR=USER+String.fromCharCode(64)+DOMAIN;
-
-  var SUBJECTS={
-    partner:     'Mvoe AI — Partnership (blood bank / pharmacy)',
-    institution: 'Mvoe AI — Institutional',
-    investor:    'Mvoe AI — Investor'
-  };
-  var current='partner';
-
-  var el=document.getElementById('addr-text');
-  if(el) el.textContent=ADDR;
-
-  function url(kind,subject){
-    var s=encodeURIComponent(subject||'');
-    if(kind==='gmail')   return 'https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(ADDR)+'&su='+s;
-    if(kind==='outlook') return 'https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(ADDR)+'&subject='+s;
-    return 'mailto:'+ADDR+'?subject='+s;
-  }
-
-  /* subject buttons: pick the bucket, then open the default handler */
-  document.querySelectorAll('[data-subject]').forEach(function(b){
-    b.addEventListener('click',function(){
-      current=b.getAttribute('data-subject');
-      window.location.href=url('default',SUBJECTS[current]);
-    });
-  });
-
-  /* explicit webmail routes — these never depend on an OS mail handler */
-  document.querySelectorAll('[data-mail]').forEach(function(a){
-    a.addEventListener('click',function(e){
-      e.preventDefault();
-      var kind=a.getAttribute('data-mail');
-      var target=url(kind,SUBJECTS[current]);
-      if(kind==='default'){ window.location.href=target; }
-      else { window.open(target,'_blank','noopener'); }
-    });
-  });
-
-  /* copy, with a fallback for browsers that refuse the async clipboard API */
-  var btn=document.getElementById('copyBtn');
-  if(btn){
-    btn.addEventListener('click',function(){
-      var done=function(){
-        var keep=btn.innerHTML;
-        btn.textContent=(document.body.classList.contains('lang-fr')?'Copié ✓':'Copied ✓');
-        setTimeout(function(){ btn.innerHTML=keep; },1800);
-      };
-      if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(ADDR).then(done,select);
-      } else { select(); }
-      function select(){
-        try{
-          var r=document.createRange(); r.selectNodeContents(el);
-          var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
-          document.execCommand('copy'); done();
-        }catch(err){ /* address is on screen and selectable either way */ }
-      }
-    });
-  }
-})();
 
 /* ---------- architecture card: play once when it comes into view ----------
    The clip builds the diagram and holds on the finished state, so it is played
