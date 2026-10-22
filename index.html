@@ -11,7 +11,7 @@
 <meta property="og:description" content="A WhatsApp service that locates blood and medicine in Cameroon — and records the request itself. Phase 1 MVP ships Q4 2026 in Yaoundé.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mvoeai.com/">
-<meta property="og:image" content="https://mvoeai.com/og-image.png">
+<meta property="og:image" content="https://mvoeai.com/og-image-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Mvoe AI Phase 1a architecture — one message, two models, no identity leaves Cameroon.">
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mvoe AI — Recording what patients actually ask for">
 <meta name="twitter:description" content="A WhatsApp service that locates blood and medicine in Cameroon — and records the request itself.">
-<meta name="twitter:image" content="https://mvoeai.com/og-image.png">
+<meta name="twitter:image" content="https://mvoeai.com/og-image-v2.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23073d46'/%3E%3Cpath d='M16 6.5c4.4 5 6.8 8.3 6.8 11.4a6.8 6.8 0 0 1-13.6 0C9.2 14.8 11.6 11.5 16 6.5z' fill='%230d8a9c'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -172,12 +172,12 @@
   <div class="container">
     <span class="hero-badge"><span class="dot"></span><span class="fr">En développement — MVP Phase 1 · T4 2026, Yaoundé</span><span class="en">In development — Phase 1 MVP · Q4 2026, Yaoundé</span></span>
     <h1>
-      <span class="fr">Chaque demande de soin est un fait. Au Cameroun, presque aucune n'est <em>enregistrée</em>.</span>
-      <span class="en">Every request for care is a fact. In Cameroon, almost none of them are <em>recorded</em>.</span>
+      <span class="fr">Chaque demande de soin est un fait</span>
+      <span class="en">Every request for care is a fact.</span>
     </h1>
     <p class="lead">
-      <span class="fr">Mvoe AI construit un service qui répond à des questions bien réelles — où trouver cette poche de sang, ce médicament, maintenant. En y répondant, nous rassemblerons les données qui nous aideront à améliorer le système de santé africain. Le sang est notre point de départ. </span>
-      <span class="en">Mvoe AI is building a service that answers real-life questions — where can I find this blood unit, this medicine, right now. In answering them, we will gather the data that helps us improve Africa's health systems. Blood is where we start.</span>
+      <span class="fr">Mvoe AI construit un service qui répond à des questions réelles: "Où trouver cette poche de sang?"; "Avez vous ce médicament en stock?". En y répondant, nous rassemblerons les données qui nous aideront à améliorer le système de santé africain. Le sang est notre point de départ. </span>
+      <span class="en">Mvoe AI is building a service that answers real-life questions: "Where can I find this blood unit?"; "Do you have this medicine?". In answering them, we will gather the data that helps us improve Africa's health systems. Blood is where we start.</span>
     </p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact"><span class="fr">Devenir partenaire</span><span class="en">Become a partner</span></a>
@@ -330,7 +330,7 @@
     <figure class="arch-figure">
       <div class="arch-media">
         <video id="archVideo" muted playsinline preload="none" poster="architecture-card.png"
-               aria-label="Mvoe AI Phase 1a architecture: a patient message enters via the WhatsApp Business API into n8n, passes a Gemma redaction gate inside the Cameroon data-residency boundary, and only then reaches Gemini for intent extraction; blood banks and pharmacies report supply over the same WhatsApp, producing a de-identified demand dataset.">
+               aria-label="Mvoe AI Phase 1a architecture: a patient message enters via the WhatsApp Business API into the automation engine, passes a redaction gate run by a local AI model inside the Cameroon data-residency boundary, and only then reaches a cloud AI model for intent extraction; blood banks and pharmacies report supply over the same WhatsApp, producing a de-identified demand dataset.">
           <source src="architecture-card.mp4" type="video/mp4">
         </video>
       </div>
@@ -348,17 +348,17 @@
         </li>
         <li>
           <span class="n"><span class="fr">02 · Réception</span><span class="en">02 · Ingest</span></span>
-          <b><span class="fr">API WhatsApp → n8n</span><span class="en">WhatsApp API → n8n</span></b>
+          <b><span class="fr">API WhatsApp → automatisation</span><span class="en">WhatsApp API → automation</span></b>
           <span class="d"><span class="fr">L'orchestration s'exécute dans le pays. Le message brut n'atterrit jamais à l'étranger.</span><span class="en">Orchestration runs in-country. The raw message never lands abroad.</span></span>
         </li>
         <li class="gate">
           <span class="n"><span class="fr">03 · Barrière d'expurgation</span><span class="en">03 · Redaction gate</span></span>
-          <b>Gemma</b>
+          <b><span class="fr">Modèle d'IA local</span><span class="en">Local AI model</span></b>
           <span class="d"><span class="fr">Les identifiants sont pseudonymisés à l'arrivée. La clé reste au Cameroun et n'est jamais exportée.</span><span class="en">Identifiers pseudonymised on arrival. Key held in Cameroon, never exported.</span></span>
         </li>
         <li>
           <span class="n"><span class="fr">04 · Compréhension</span><span class="en">04 · Understanding</span></span>
-          <b>Gemini</b>
+          <b><span class="fr">Modèle d'IA dans le cloud</span><span class="en">Cloud AI model</span></b>
           <span class="d"><span class="fr">Appelé uniquement après expurgation. Extrait l'intention d'un texte libre et désordonné ; renvoie une fiche structurée.</span><span class="en">Called only after redaction. Extracts intent from messy, unstructured text; returns a structured record.</span></span>
         </li>
         <li>
